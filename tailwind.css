@@ -6,34 +6,37 @@
     --tw-primary: #ff7214;
     --tw-secondary: #3a3a3a;
   }
-}
-.container {
-  width: 100%;
-  padding-inline: 12px;
-  @apply sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1250px] 3xl:max-w-[1366px] 4xl:max-w-[1600px];
+  /* typography */
+  h1,
+  .h1 {
+    @apply text-[calc(1.375rem+1.5vw)] xl:text-[2.5rem];
+  }
+  h2,
+  .h2 {
+    @apply text-[calc(1.325rem+0.9vw)] xl:text-[2rem];
+  }
+  h3,
+  .h3 {
+    @apply text-[calc(1.3rem+0.6vw)] xl:text-[1.75rem];
+  }
+  h4,
+  .h4 {
+    @apply text-[calc(1.275rem+0.3vw)] xl:text-[1.5rem];
+  }
+  h5,
+  .h5 {
+    @apply text-[1.25rem];
+  }
+  h6,
+  .h6 {
+    @apply text-[1rem];
+  }
 }
 
-/* primary btn */
-.btn {
-  @apply font-koulen p-1.5 text-lg md:text-[20px] lg:text-2xl text-white transition-all px-10 md:px-12 lg:px-16 py-2 md:py-4 leading-9 inline-block;
-}
-.btn-primary {
-  @apply bg-primary hover:bg-white hover:text-primary font-koulen;
-  box-shadow: inset 0 0 0 3px var(--tw-primary),
-    inset 0 0 0 6px var(--tw-primary), inset 0 0 0 7px white;
-}
-.btn-primary:hover {
-  box-shadow: inset 0 0 0 3px white, inset 0 0 0 6px white,
-    inset 0 0 0 7px var(--tw-primary);
-}
-
-/* btn white */
-.btn-white {
-  @apply bg-white hover:bg-primary hover:text-white text-primary;
-  box-shadow: inset 0 0 0 3px white, inset 0 0 0 6px white,
-    inset 0 0 0 7px var(--tw-primary);
-}
-.btn-white:hover {
-  box-shadow: inset 0 0 0 3px var(--tw-primary),
-    inset 0 0 0 6px var(--tw-primary), inset 0 0 0 7px white;
+@layer utilities {
+  .container {
+    width: 100%;
+    padding-inline: 12px;
+    @apply sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1250px] 3xl:max-w-[1366px] 4xl:max-w-[1600px];
+  }
 }

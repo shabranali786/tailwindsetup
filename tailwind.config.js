@@ -1,10 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{html,js}",
-    "./node_modules/tw-elements/js/**/*.js",
-  ],
+  content: ["./index.html", "./src/**/*.{html,js}"],
   theme: {
     screens: {
       sm: "576px",
@@ -45,6 +41,22 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tw-elements/plugin.cjs")],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".btn": {
+          "@apply font-koulen p-1.5 px-10 md:px-12 lg:px-16 py-2 md:py-4 text-lg md:text-[20px] lg:text-2xl transition-all leading-9 inline-block rounded-lg":
+            {},
+        },
+        ".btn-primary": {
+          "@apply bg-primary hover:bg-primary-600": {},
+        },
+        ".btn-white": {
+          "@apply bg-white hover:bg-primary hover:text-white text-primary": {},
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
   darkMode: "class",
 };
